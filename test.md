@@ -38,6 +38,12 @@ spec:
     name: bmcluster
   status:
     phase: ready
+    bootstrap:
+      configRef:
+        apiVersion: bootstrap.cluster.x-k8s.io/v1alpha2
+        kind: KubeadmConfig
+        name: test1-controlplane-0
+      data: IyMgdGVtcGxhdGU6IGppbmphCiNjbG91ZC1jb25maWcKCndyaXRlX2ZpbGVzOgotICAgcGF0aDogL2V0Yy9rdWJlcm5ldGVzL3BraS9jYS5jcnQKICAgIG93bmVyOiByb290OnJvb3QKICAgIHBlcm1pc3Npb25zOiAnMDY0MCcKICAgIGNvbnRlbnQ6IHwKICAgICAgLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCiAgICAgIE1JSUN5ekNDQWJPZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKICAgICAgY201bGRHVnpNQjRYRFRJd01ESXhOekE1TVRJek5Gb1hEVE13TURJeE5EQTVNVGN6TkZvd0ZURVRNQkVHQTFVRQogICAgICBBeE1LYTNWaVpYSnVaWFJsY3pDQ0F
 ```
 
 ## BareMetalCluster
