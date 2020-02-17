@@ -119,28 +119,9 @@ spec:
     - cp /etc/kubernetes/admin.conf /home/ubuntu/.kube/config
     - chown ubuntu:ubuntu /home/ubuntu/.kube/config
   files:
-      - path: /etc/keepalived/keepalived.conf
-        content: |
-          ! Configuration File for keepalived
-          global_defs {
-              notification_email {
-              sysadmin@example.com
-              support@example.com
-              }
-              notification_email_from lb@example.com
-              smtp_server localhost
-              smtp_connect_timeout 30
-          }
-          vrrp_instance VI_1 {
-              state MASTER
-              interface enp2s0
-              virtual_router_id 1
-              priority 101
-              advert_int 1
-              virtual_ipaddress {
-                  192.168.111.249
-              }
-          }
+      - path: /home/centos/.ssh/authorized_keys
+        content: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD0Blh96b22iSiOmqHoj1MRCp2vQInR0QoC9jPsVr3HQOeYIiOWO6JdsvYW8gwazrM4q94eCbtPOTLYpVVzWXXqiCwq5t2wua962S6mYjaeUGDsbsFe1WIxmwH2LkPf0JoeW7KsZ49FKQaeAoEMg4kSdui78AtNVxfM4+uoWCNccIY4ehizw9ZJlRkCa4BRtRl3Oh+oOQ5IwCWc3RGDcvmdTtRvDOeJxRmVGbyPJsGEm/lGab8yoU5XZb3GXwwy8QHVHsQYbyOUeisHKTl6oMYDUKKLF4kceZl1ANgT3xKr6KT1p+bRgDu4N4A8NgkBGpYadPkkAlw4XWZC7Y8KfmAx tmax@C4-3
+
 ```
 
 ## Machine
