@@ -36,6 +36,8 @@ spec:
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha2
     kind: BareMetalCluster
     name: bmcluster
+  status:
+    phase: ready
 ```
 
 ## BareMetalCluster
