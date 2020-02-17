@@ -83,6 +83,24 @@ kind: KubeadmConfig
 metadata:
   name: controlplane-0
 spec:
+  clusterConfiguration:
+        apiServer: {}
+        apiVersion: kubeadm.k8s.io/v1beta1
+        certificatesDir: /etc/kubernetes/pki
+        clusterName: test1
+        controlPlaneEndpoint: 192.168.111.249:6443
+        controllerManager: {}
+        dns:
+          type: ""
+        etcd: {}
+        imageRepository: ""
+        kind: ClusterConfiguration
+        kubernetesVersion: v1.17.0
+        networking:
+          dnsDomain: cluster.local
+          podSubnet: 192.168.0.0/18
+          serviceSubnet: 10.96.0.0/12
+        scheduler: {}
   initConfiguration:
     nodeRegistration:
       name: '{{ ds.meta_data.name }}'
