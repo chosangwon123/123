@@ -37,7 +37,7 @@ spec:
     kind: BareMetalCluster
     name: bmcluster
   status:
-    phase: pending
+    phase: provisioning
     phase: ready
     bootstrap:
       configRef:
