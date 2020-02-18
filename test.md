@@ -38,11 +38,21 @@ kind: AWSCluster
 metadata:
   name: capi-quickstart
 spec:
-  # Change this value to the region you want to deploy the cluster in.
   region: us-east-1
-  # Change this value to a valid SSH Key Pair present in your AWS Account.
   sshKeyName: default
 
+apiVersion: infrastructure.cluster.x-k8s.io/v1alpha2
+kind: OpenStackCluster
+metadata:
+  name: capi-quickstart
+spec:
+  cloudName: ${OPENSTACK_CLOUD}
+  cloudsSecret:
+    name: cloud-config
+  nodeCidr: ${NODE_CIDR}
+  externalNetworkId: ${OPENSTACK_EXTERNAL_NETWORK_ID}
+  disablePortSecurity: true
+  disableServerTags: true
 
 
 apiVersion: cluster.x-k8s.io/v1alpha2
