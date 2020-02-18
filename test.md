@@ -19,6 +19,7 @@ CR represents a physical host with BMC credentials, hardware status etc.
 A Cluster is a Cluster API core object representing a Kubernetes cluster.
 
 Example cluster:
+```yaml
 apiVersion: cluster.x-k8s.io/v1alpha2
 kind: Cluster
 metadata:
@@ -44,7 +45,6 @@ spec:
 
 
 
-```yaml
 apiVersion: cluster.x-k8s.io/v1alpha2
 kind: Cluster
 metadata:
