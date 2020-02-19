@@ -222,7 +222,36 @@ spec:
           USERCTL=no
   status:
     phase: pending
-        
+
+
+
+
+
+apiVersion: cluster.x-k8s.io/v1alpha2
+kind: Machine
+metadata:
+  name: controlplane-0
+spec:
+  version: 1.16
+    clusterConfiguration:
+      apiServer: {}
+      apiVersion: kubeadm.k8s.io/v1beta1
+      certificatesDir: /etc/kubernetes/pki
+      clusterName: test1
+      controlPlaneEndpoint: 192.168.111.249:6443
+      controllerManager: {}
+      dns:
+        type: ""
+      etcd: {}
+      imageRepository: ""
+      kind: ClusterConfiguration
+      kubernetesVersion: v1.17.0
+      networking:
+        dnsDomain: cluster.local
+        podSubnet: 192.168.0.0/18
+        serviceSubnet: 10.96.0.0/12
+      scheduler: {}
+
 ```
 
 ## BareMetalMachine
