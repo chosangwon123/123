@@ -10,6 +10,25 @@ Metal3-io components are deployed :
 
 ## BareMetalHost
 
+```yaml
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: node-0
+spec:
+  online: true
+  bootMACAddress: 00:31:ac:64:c3:c2
+  bmc:
+    address: ipmi://10.10.57.19
+    credentialsName: bmo-master-0-bmc-secret
+  image:
+      url: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
+      checksum: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img.md5sum
+  bootstrap:
+    data: IvMgdGVtcGxhd..
+
+```
+
 The BareMetalHost is an object from
 [baremetal-operator](https://github.com/metal3-io/baremetal-operator). Each
 CR represents a physical host with BMC credentials, hardware status etc.
@@ -262,8 +281,8 @@ kind: Machine
 metadata:
   name: controlplane-0
 spec:
-    bootstrap:
-      data: IvMgdGVtcGxhd..
+  bootstrap:
+    data: IvMgdGVtcGxhd..
 status:
   phase: ready
   
