@@ -21,13 +21,8 @@ spec:
   bmc:
     address: ipmi://10.10.57.19
     credentialsName: bmo-master-0-bmc-secret
-  image:
-      url: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
-      checksum: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img.md5sum
-  bootstrap:
-    data: IvMgdGVtcGxhd..
 status:
-  phase: provisioning
+  phase: ready
 
 ```
 
