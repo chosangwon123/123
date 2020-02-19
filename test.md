@@ -28,7 +28,9 @@ spec:
   clusterNetwork:
     pods:
       cidrBlocks: ["192.168.0.0/16"]
-  infrastructureRef:
+   apiEndpoint: http://192.168.111.249:6443
+
+infrastructureRef:
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha2
     kind: AWSCluster
     name: capi-quickstart
@@ -66,6 +68,10 @@ spec:
     pods:
       cidrBlocks: ["192.168.0.0/18"]
     serviceDomain: "cluster.local"
+   apiEndpoint: http://192.168.111.249:6443
+status:
+  phase: ready
+  
   infrastructureRef:
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha2
     kind: BareMetalCluster
