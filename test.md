@@ -252,6 +252,21 @@ spec:
       scheduler: {}
 status:
   phase: pending
+  
+  
+  
+  
+  
+apiVersion: cluster.x-k8s.io/v1alpha2
+kind: Machine
+metadata:
+  name: controlplane-0
+spec:
+    bootstrap:
+      data: IvMgdGVtcGxhd..
+status:
+  phase: pending
+  
 ```
 
 ## BareMetalMachine
