@@ -265,7 +265,7 @@ spec:
     bootstrap:
       data: IvMgdGVtcGxhd..
 status:
-  phase: pending
+  phase: ready
   
 ```
 
