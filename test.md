@@ -232,7 +232,6 @@ kind: Machine
 metadata:
   name: controlplane-0
 spec:
-  version: 1.16
     clusterConfiguration:
       apiServer: {}
       apiVersion: kubeadm.k8s.io/v1beta1
@@ -251,7 +250,8 @@ spec:
         podSubnet: 192.168.0.0/18
         serviceSubnet: 10.96.0.0/12
       scheduler: {}
-
+status:
+  phase: pending
 ```
 
 ## BareMetalMachine
