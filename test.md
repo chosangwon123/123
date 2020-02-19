@@ -26,6 +26,8 @@ spec:
       checksum: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img.md5sum
   bootstrap:
     data: IvMgdGVtcGxhd..
+status:
+  phase: provisioning
 
 ```
 
