@@ -68,7 +68,7 @@ spec:
     pods:
       cidrBlocks: ["192.168.0.0/18"]
     serviceDomain: "cluster.local"
-   apiEndpoint: http://192.168.111.249:6443
+   apiEndpoint: 192.168.111.249:6443
 status:
   phase: ready
   
