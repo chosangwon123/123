@@ -14,7 +14,7 @@ Metal3-io components are deployed :
 apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
-  name: node-0
+  name: bmo-master-0
 spec:
   online: true
   bootMACAddress: 00:31:ac:64:c3:c2
