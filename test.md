@@ -203,20 +203,26 @@ apiVersion: cluster.x-k8s.io/v1alpha2
 kind: Machine
 metadata:
   name: controlplane-0
-  labels:
-    cluster.x-k8s.io/control-plane: "true"
-    cluster.x-k8s.io/cluster-name: "cluster"
 spec:
   version: 1.16
-  bootstrap:
-    configRef:
-      apiVersion: bootstrap.cluster.x-k8s.io/v1alpha2
-      kind: KubeadmConfig
-      name: controlplane-0
-  infrastructureRef:
-    apiVersion: infrastructure.cluster.x-k8s.io/v1alpha2
-    kind: BareMetalMachine
-    name: controlplane-0
+  image:
+    url: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
+    checksum: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img.md5sum
+    preKubeadmCommands:
+    - apt update -y
+  postKubeadmCommands:
+    - mkdir -p /home/ubuntu/.kube
+  files:
+      - path: /etc/sysconfig/network-scripts/ifcfg-eth1
+        content: |
+          BOOTPROTO=dhcp
+          DEVICE=eth1
+          ONBOOT=yes
+          TYPE=Ethernet
+          USERCTL=no
+  status:
+    phase: pending
+        
 ```
 
 ## BareMetalMachine
